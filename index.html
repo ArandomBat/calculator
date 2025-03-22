@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <body>
+        <header>
+            <!-- Navigatiebalk -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="html bestanden\tables.html">Tables</a></li> 
+                </ul>
+            </nav>
+        </header>
+    
+    </body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+    <h1>Calculator - Rekentools</h1>
+
+ <!-- Disclaimer -->
+ <p><strong class="red-text">Disclaimer:</strong> De uitkomsten van deze rekentools zijn indicatief en kunnen fouten bevatten. Controleer altijd handmatig bij cruciale berekeningen.</p>
+
+ <h2>Inhoudsopgave</h2>
+ <ul class="inhoudsopgave">
+     <li><a href="#ohm">Wet van Ohm</a></li>
+     <li><a href="#Vermogen">Wet van Vermogen</a></li>
+ </ul>
+
+
+    <!-- Wet van Ohm -->
+    <h2 id="ohm">Wet van Ohm</h2>
+    <form>
+        <input type="number" id="IDvoltage" placeholder="Voltage (V)" step="0.01">
+        <input type="number" id="IDampere" placeholder="Ampère (A)" step="0.01">
+        <input type="number" id="IDohm" placeholder="Weerstand (Ω)" step="0.01">
+        <button type="button" onclick="RekenenWetOhm()">Bereken</button>
+        <p id="outputWetVanOhm"></p>
+    </form>
+
+        <!-- Wet van Vermogen -->
+        <h2 id="Vermogen">Wet van Vermogen</h2>
+        <form>
+            <input type="number" id="IDVermogen_W" placeholder="Vermogen (W)" step="0.01">
+            <input type="number" id="IDVermogen_V" placeholder="Voltage (V)" step="0.01">
+            <input type="number" id="IDVermogen_A" placeholder="Ampère (A)" step="0.01">
+            <button type="button" onclick="RekenenWetVermogen()">Bereken</button>
+            <p id="outputWetVanVermogen"></p>
+        </form>
+
+    <script src="javascript/WetVanOhmscript.js"></script>
+    <script src="javascript/WetVanVermogenscript.js"></script>
+</body>
+</html>
