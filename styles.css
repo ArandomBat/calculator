@@ -1,0 +1,231 @@
+/* Algemene stijl voor de hele pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212; /* Donkere achtergrond voor de gehele pagina */
+    color: #fff; /* Witte tekst */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Disclaimer rood */
+.red-text {
+    color: red;
+    font-weight: bold;
+}
+
+/* Stijl voor inputvelden en knop */
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+input {
+    background-color: #333; /* Donkere achtergrond voor invoervelden */
+    color: #fff; /* Witte tekst in invoervelden */
+}
+
+button {
+    background-color: #444; /* Donkere achtergrond voor knoppen */
+    color: #fff; /* Witte tekst voor knoppen */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #666; /* Lichtere achtergrondkleur bij hover */
+}
+
+/* Output stijl */
+#output {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #222; /* Donkere achtergrond voor output */
+    border-radius: 5px;
+}
+
+/* Stijl voor de navigatiebalk */
+.navbar {
+    background-color: #333; /* Donkere achtergrond voor de navbar */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white; /* Witte tekst voor de links in de navbar */
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #555; /* Donkere achtergrond bij hover op links */
+}
+
+/* Stijl voor de header */
+header {
+    background-color: #222; /* Donkere achtergrond voor de header */
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+header h1 {
+    margin-top: 10px;
+}
+
+/* Stijl voor de tabellen */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #444; /* Donkere randkleur */
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #444; /* Donkere achtergrond voor de koptekst van de tabel */
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #333; /* Donkere achtergrond voor even rijen */
+}
+
+table tr:nth-child(odd) {
+    background-color: #222; /* Nog donkerdere achtergrond voor oneven rijen */
+}
+
+table tr:hover {
+    background-color: #555; /* Lichtere achtergrondkleur bij hover over de rij */
+}
+
+/* Stijl voor de inhoudsopgave */
+.inhoudsopgave {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Laat items naar de volgende rij gaan als er geen ruimte is */
+    gap: 15px; /* Ruimte tussen de knoppen */
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    justify-content: flex-start; /* Begin altijd links */
+}
+
+/* Stijl voor de inhoudsopgave items */
+.inhoudsopgave a {
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: #333;
+    color: #0af;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 150px; /* Minimale breedte voor consistentie */
+    flex: 0 1 auto; /* Laat de breedte zich aanpassen tot maximaal beschikbare ruimte */
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover-effect met subtiele schaduw en lichte vergroting */
+.inhoudsopgave a:hover {
+    background-color: #555;
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+/* Algemene stijl voor de gallery sectie */
+.table-gallery {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+}
+
+/* Titel stijl */
+.table-gallery h2 {
+    text-align: center;
+    color: #0af;
+    margin-bottom: 20px;
+}
+
+/* Grid layout voor de tabellen */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+/* Individuele afbeelding stijl */
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Hover-effect */
+.image-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox stijl */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Lightbox afbeelding stijl */
+#lightbox-img {
+    max-width: 90%;
+    max-height:90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Beschrijving onder afbeelding */
+.image-item p {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1rem;
+}
