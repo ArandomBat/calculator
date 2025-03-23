@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <body>
+        <header>
+            <!-- Navigatiebalk -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="html bestanden\tables.html">Tables</a></li> 
+                </ul>
+            </nav>
+        </header>
+    
+    </body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+    <h1>Calculator - Rekentools</h1>
+
+ <!-- Disclaimer -->
+ <p><strong class="red-text">Disclaimer:</strong> De uitkomsten van deze rekentools zijn indicatief en kunnen fouten bevatten. Controleer altijd handmatig bij cruciale berekeningen.</p>
+
+<!-- Inhoudsopgave -->
+ <h2>Inhoudsopgave</h2>
+ <ul class="inhoudsopgave">
+     <li><a href="#ohm">Wet van Ohm</a></li>
+     <li><a href="#Vermogen">Vermogen</a></li>
+     <li><a href="#ElektrischeLading">Elektrische Lading</a></li>
+ </ul>
+
+<!-- Wet van Ohm -->
+<h2 id="ohm">Wet van Ohm</h2>
+<a href="https://nl.wikipedia.org/wiki/Wet_van_Ohm" target="_blank" class="white-link">Meer over de Wet van Ohm</a>
+<form>
+    <input type="number" id="IDVoltage_WetVanOhm" placeholder="Voltage (V)" step="0.01">
+    <input type="number" id="IDAmpere_WetVanOhm" placeholder="Ampère (A)" step="0.01">
+    <input type="number" id="IDOhm_WetVanOhm" placeholder="Weerstand (Ω)" step="0.01">
+    <button type="button" onclick="RekenenWetOhm()">Bereken</button>
+    <button type="button" onclick="ClearWetOhm()">Clear</button>
+    <p id="outputWetVanOhm"></p>
+</form>
+
+<!-- Vermogen -->
+<h2 id="Vermogen">Vermogen</h2>
+<a href="https://nl.wikipedia.org/wiki/Vermogen_(natuurkunde)" target="_blank" class="white-link">Meer over Vermogen</a>
+<form>
+    <input type="number" id="IDVoltage_Vermogen" placeholder="Voltage (V)" step="0.01">
+    <input type="number" id="IDAmpere_Vermogen" placeholder="Ampère (A)" step="0.01">
+    <input type="number" id="IDVermogen_Vermogen" placeholder="Vermogen (W)" step="0.01">
+    <button type="button" onclick="RekenenVermogen()">Bereken</button>
+    <button type="button" onclick="ClearVermogen()">Clear</button>
+    <p id="outputVermogen"></p>
+</form>
+
+<!-- Elektrische lading -->
+<h2 id="ElektrischeLading">Elektrische Lading</h2>
+<a href="https://nl.wikipedia.org/wiki/Elektrische_lading" target="_blank" class="white-link">Meer over Elektrische Lading</a>
+<form>
+    <input type="number" id="IDCoulomb_ElektrischeLading" placeholder="Coulomb (C)" step="0.01">
+    <input type="number" id="IDAmpere_ElektrischeLading" placeholder="Ampère (A)" step="0.01">
+    <input type="number" id="IDSeconde_ElektrischeLading" placeholder="Seconde (S)" step="0.01">
+    <button type="button" onclick="RekenenElektrischeLading()">Bereken</button>
+    <button type="button" onclick="ClearElektrischeLading()">Clear</button>
+    <p id="outputElektrischeLading"></p>
+</form>
+
+
+    <script src="javascript/WetVanOhmscript.js"></script>
+    <script src="javascript/Vermogenscript.js"></script>
+    <script src="javascript/ElektrischeLadingscript.js"></script>
+</body>
+</html>
