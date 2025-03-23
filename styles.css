@@ -229,3 +229,14 @@ table tr:hover {
     color: #fff;
     font-size: 1rem;
 }
+
+
+/* Stijl voor links */
+.white-link {
+    color: white;
+    text-decoration: none;
+}
+
+.white-link:hover {
+    text-decoration: underline;
+}
