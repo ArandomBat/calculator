@@ -240,3 +240,36 @@ table tr:hover {
 .white-link:hover {
     text-decoration: underline;
 }
+
+/* Algemene stijl voor de dropdowns */
+select {
+    background-color: #333; /* Donkere achtergrond */
+    color: white; /* Witte tekst */
+    border: 1px solid #444; /* Donkere rand */
+    border-radius: 5px; /* Geanimeerde afgeronde hoeken */
+    padding: 5px; /* Binnenmarge voor betere zichtbaarheid */
+    font-size: 1em; /* Standaard lettergrootte */
+}
+
+/* Hover effect voor dropdowns */
+select:hover {
+    background-color: #555; /* Donkerder bij hover */
+    cursor: pointer; /* Handcursor voor interactie */
+}
+
+/* Focus effect voor dropdowns */
+select:focus {
+    border-color: #888; /* Verlichting van randkleur bij focus */
+    outline: none; /* Verwijder de standaard focus outline */
+}
+
+/* Aangepaste stijl voor de option elementen */
+option {
+    background-color: #333; /* Donkere achtergrond voor de opties */
+    color: white; /* Witte tekst voor de opties */
+}
+
+/* Hover effect voor de opties */
+option:hover {
+    background-color: #555; /* Donkerder bij hover */
+}

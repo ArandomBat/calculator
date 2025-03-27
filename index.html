@@ -8,7 +8,7 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="html bestanden\tables.html">Tables</a></li> 
+                    <li><a href="html bestanden\tables.html">Tabellen</a></li> 
                 </ul>
             </nav>
         </header>
@@ -35,43 +35,110 @@
 
 <!-- Wet van Ohm -->
 <h2 id="ohm">Wet van Ohm</h2>
-<a href="https://nl.wikipedia.org/wiki/Wet_van_Ohm" target="_blank" class="white-link">Meer over de Wet van Ohm</a>
 <form>
-    <input type="number" id="IDVoltage_WetVanOhm" placeholder="Voltage (V)" step="0.01">
-    <input type="number" id="IDAmpere_WetVanOhm" placeholder="Ampère (A)" step="0.01">
-    <input type="number" id="IDOhm_WetVanOhm" placeholder="Weerstand (Ω)" step="0.01">
+    <input type="number" id="IDVoltage_WetVanOhm" placeholder="Voltage" step="0.01">
+    <select id="unitVoltage_WetVanOhm">
+        <option value="1000000">MV</option> <!-- MegaVolt -->
+        <option value="1000">kV</option> <!-- KiloVolt -->
+        <option value="1">V</option> <!-- Volt -->
+        <option value="0.001">mV</option> <!-- Millivolt -->
+        <option value="0.000001">µV</option> <!-- MicroVolt -->
+    </select>
+
+    <input type="number" id="IDAmpere_WetVanOhm" placeholder="Ampère" step="0.01">
+    <select id="unitAmpere_WetVanOhm">
+        <option value="1000">kA</option> <!-- KiloAmpère -->
+        <option value="1">A</option> <!-- Ampère -->
+        <option value="0.001">mA</option> <!-- MilliAmpère -->
+        <option value="0.000001">µA</option> <!-- MicroAmpère -->
+    </select>
+
+    <input type="number" id="IDOhm_WetVanOhm" placeholder="Weerstand" step="0.01">
+    <select id="unitOhm_WetVanOhm">
+        <option value="1000000">MΩ</option> <!-- MegaOhm -->
+        <option value="1000">kΩ</option> <!-- KiloOhm -->
+        <option value="1">Ω</option> <!-- Ohm -->
+        <option value="0.001">mΩ</option> <!-- MilliOhm -->
+        <option value="0.000001">µΩ</option> <!-- MicroOhm -->
+    </select>
+    
     <button type="button" onclick="RekenenWetOhm()">Bereken</button>
     <button type="button" onclick="ClearWetOhm()">Clear</button>
     <p id="outputWetVanOhm"></p>
+    <a href="https://nl.wikipedia.org/wiki/Wet_van_Ohm" target="_blank" class="white-link">Meer over de Wet van Ohm</a>
 </form>
 
 <!-- Vermogen -->
 <h2 id="Vermogen">Vermogen</h2>
-<a href="https://nl.wikipedia.org/wiki/Vermogen_(natuurkunde)" target="_blank" class="white-link">Meer over Vermogen</a>
 <form>
-    <input type="number" id="IDVoltage_Vermogen" placeholder="Voltage (V)" step="0.01">
-    <input type="number" id="IDAmpere_Vermogen" placeholder="Ampère (A)" step="0.01">
-    <input type="number" id="IDVermogen_Vermogen" placeholder="Vermogen (W)" step="0.01">
+    <input type="number" id="IDVoltage_Vermogen" placeholder="Voltage" step="0.01">
+    <select id="unitVoltage_Vermogen">
+        <option value="1000000">MV</option> <!-- MegaVolt -->
+        <option value="1000">kV</option> <!-- KiloVolt -->
+        <option value="1">V</option> <!-- Volt -->
+        <option value="0.001">mV</option> <!-- Millivolt -->
+        <option value="0.000001">µV</option> <!-- MicroVolt -->
+    </select>
+
+    <input type="number" id="IDAmpere_Vermogen" placeholder="Ampère" step="0.01">
+    <select id="unitAmpere_Vermogen">
+        <option value="1000">kA</option> <!-- KiloAmpère -->
+        <option value="1">A</option> <!-- Ampère -->
+        <option value="0.001">mA</option> <!-- MilliAmpère -->
+        <option value="0.000001">µA</option> <!-- MicroAmpère -->
+    </select>
+
+    <input type="number" id="IDVermogen_Vermogen" placeholder="Vermogen" step="0.01">
+    <select id="unitVermogen_Vermogen">
+        <option value="1000">kW</option> <!-- KiloWatt -->
+        <option value="1">W</option> <!-- Watt -->
+        <option value="0.001">mW</option> <!-- MilliWatt -->
+        <option value="0.000001">µW</option>
+    </select>
+
     <button type="button" onclick="RekenenVermogen()">Bereken</button>
     <button type="button" onclick="ClearVermogen()">Clear</button>
     <p id="outputVermogen"></p>
+    <a href="https://nl.wikipedia.org/wiki/Vermogen_(natuurkunde)" target="_blank" class="white-link">Meer over Vermogen</a>
 </form>
 
 <!-- Elektrische lading -->
 <h2 id="ElektrischeLading">Elektrische Lading</h2>
-<a href="https://nl.wikipedia.org/wiki/Elektrische_lading" target="_blank" class="white-link">Meer over Elektrische Lading</a>
 <form>
-    <input type="number" id="IDCoulomb_ElektrischeLading" placeholder="Coulomb (C)" step="0.01">
-    <input type="number" id="IDAmpere_ElektrischeLading" placeholder="Ampère (A)" step="0.01">
-    <input type="number" id="IDSeconde_ElektrischeLading" placeholder="Seconde (S)" step="0.01">
+    <input type="number" id="IDCoulomb_ElektrischeLading" placeholder="Coulomb" step="0.01">
+    <select id="unitCoulomb_ElektrischeLading">
+        <option value="1000000">kC</option> <!-- KiloCoulomb -->
+        <option value="1">C</option> <!-- Coulomb -->
+        <option value="0.001">mC</option> <!-- MilliCoulomb -->
+        <option value="0.000001">µC</option> <!-- MicroCoulomb -->
+    </select>
+
+    <input type="number" id="IDAmpere_ElektrischeLading" placeholder="Ampère" step="0.01">
+    <select id="unitAmpere_ElektrischeLading">
+        <option value="1000">kA</option> <!-- KiloAmpère -->
+        <option value="1">A</option> <!-- Ampère -->
+        <option value="0.001">mA</option> <!-- MilliAmpère -->
+        <option value="0.000001">µA</option> <!-- MicroAmpère -->
+    </select>
+
+    <input type="number" id="IDSeconde_ElektrischeLading" placeholder="Seconde" step="0.01">
+    <select id="unitSeconde_ElektrischeLading">
+        <option value="1">S</option> <!-- Seconde -->
+        <option value="0.001">mS</option> <!-- MilliSeconde -->
+    </select>
+
     <button type="button" onclick="RekenenElektrischeLading()">Bereken</button>
     <button type="button" onclick="ClearElektrischeLading()">Clear</button>
     <p id="outputElektrischeLading"></p>
+    <a href="https://nl.wikipedia.org/wiki/Elektrische_lading" target="_blank" class="white-link">Meer over Elektrische Lading</a>
 </form>
+
 
 
     <script src="javascript/WetVanOhmscript.js"></script>
     <script src="javascript/Vermogenscript.js"></script>
     <script src="javascript/ElektrischeLadingscript.js"></script>
+    <script src="javascript/dropdownscript.js"></script>
+
 </body>
 </html>
