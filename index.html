@@ -151,8 +151,12 @@
   <option value="custom">Eigen druk en temperatuur</option>
 </select><br><br>
 
-<label for="volume">Volume (m³):</label>
-<input type="number" id="volume" step="0.01"><br><br>
+<label for="volume">Volume:</label>
+<input type="number" id="volume" step="0.01">
+<select id="volumeUnit">
+  <option value="1">m³</option>
+  <option value="0.001">dm³ / L</option>
+</select><br><br>
 
 <div id="extraInputs" style="display:none;">
   <label for="pressure">Druk (kPa):</label>
@@ -174,22 +178,21 @@ function toggleInputs() {
 
 function berekenMassa() {
     const rho_n = parseFloat(document.getElementById("gas").value);
-    const V = parseFloat(document.getElementById("volume").value);
+    const V_input = parseFloat(document.getElementById("volume").value);
+    const V_factor = parseFloat(document.getElementById("volumeUnit").value);
+    const V = V_input * V_factor; // omzetting naar m³
     const mode = document.getElementById("mode").value;
 
-    const pn = 101.3; // normdruk (kPa)
-    const Tn = 273.15; // normtemp (K)
+    const pn = 101.3;      // normdruk in kPa
+    const Tn = 273.15;     // normtemp in K
 
     let m;
 
     if (mode === "norm") {
-        // Massa direct bij normcondities
         m = rho_n * V;
     } else {
         const p = parseFloat(document.getElementById("pressure").value);
         const T = parseFloat(document.getElementById("temperature").value) + 273.15; // naar Kelvin
-
-        // Boekformule
         const Vn = (p * V * Tn) / (T * pn);
         m = rho_n * Vn;
     }
