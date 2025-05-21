@@ -133,6 +133,71 @@
     <a href="https://nl.wikipedia.org/wiki/Elektrische_lading" target="_blank" class="white-link">Meer over Elektrische Lading</a>
 </form>
 
+<h2>Gas Massa Calculator</h2>
+
+<label for="gas">Kies een gas:</label>
+<select id="gas">
+  <option value="0.1786">Helium</option>
+  <option value="0.833">Aardgas</option>
+  <option value="1.429">Zuurstof</option>
+  <option value="0.08988">Waterstof</option>
+  <option value="1.251">Stikstof</option>
+  <option value="1.977">CO₂</option>
+</select><br><br>
+
+<label for="mode">Bereken bij:</label>
+<select id="mode" onchange="toggleInputs()">
+  <option value="norm">Normcondities (273 K, 101.3 kPa)</option>
+  <option value="custom">Eigen druk en temperatuur</option>
+</select><br><br>
+
+<label for="volume">Volume (m³):</label>
+<input type="number" id="volume" step="0.01"><br><br>
+
+<div id="extraInputs" style="display:none;">
+  <label for="pressure">Druk (kPa):</label>
+  <input type="number" id="pressure" step="0.1"><br><br>
+
+  <label for="temperature">Temperatuur (°C):</label>
+  <input type="number" id="temperature"><br><br>
+</div>
+
+<button onclick="berekenMassa()">Bereken massa</button>
+
+<p><strong>Massa:</strong> <span id="output">--</span> kg</p>
+
+<script>
+function toggleInputs() {
+  const mode = document.getElementById("mode").value;
+  document.getElementById("extraInputs").style.display = (mode === "custom") ? "block" : "none";
+}
+
+function berekenMassa() {
+    const rho_n = parseFloat(document.getElementById("gas").value);
+    const V = parseFloat(document.getElementById("volume").value);
+    const mode = document.getElementById("mode").value;
+
+    const pn = 101.3; // normdruk (kPa)
+    const Tn = 273.15; // normtemp (K)
+
+    let m;
+
+    if (mode === "norm") {
+        // Massa direct bij normcondities
+        m = rho_n * V;
+    } else {
+        const p = parseFloat(document.getElementById("pressure").value);
+        const T = parseFloat(document.getElementById("temperature").value) + 273.15; // naar Kelvin
+
+        // Boekformule
+        const Vn = (p * V * Tn) / (T * pn);
+        m = rho_n * Vn;
+    }
+
+    document.getElementById("output").textContent = m.toFixed(3);
+}
+</script>
+
 
 
     <script src="javascript/WetVanOhmscript.js"></script>
