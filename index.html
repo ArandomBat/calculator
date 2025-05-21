@@ -176,6 +176,20 @@ function toggleInputs() {
   document.getElementById("extraInputs").style.display = (mode === "custom") ? "block" : "none";
 }
 
+function NotatieConverter(waarde, label, unit) {
+    if (waarde >= 1) {
+        return `${label} = ${waarde.toFixed(2)} ${unit}`;
+    } else if (waarde >= 0.001) {
+        return `${label} = ${(waarde * 1000).toFixed(2)} m${unit}`;
+    } else if (waarde >= 0.000001) {
+        return `${label} = ${(waarde * 1_000_000).toFixed(2)} µ${unit}`;
+    } else if (waarde >= 0.000000001) {
+        return `${label} = ${(waarde * 1_000_000_000).toFixed(2)} n${unit}`;
+    } else {
+        return `${label} = ${waarde.toExponential(2)} ${unit}`;
+    }
+}
+
 function berekenMassa() {
     const rho_n = parseFloat(document.getElementById("gas").value);
     const V_input = parseFloat(document.getElementById("volume").value);
@@ -197,7 +211,8 @@ function berekenMassa() {
         m = rho_n * Vn;
     }
 
-    document.getElementById("output").textContent = m.toFixed(3);
+    const output = NotatieConverter(m, "Massa", "kg");
+    document.getElementById("output").textContent = output;
 }
 </script>
 
