@@ -221,7 +221,7 @@ function berekenMassa() {
         m = rho_n * Vn;
     }
 
-    const output = NotatieConverter(m, "Massa", "kg");
+    const output = NotatieConverter(m * 1000, "Massa", "g"); // Zet om naar gram
     document.getElementById("output").textContent = output;
 }
 </script>
