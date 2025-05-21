@@ -177,18 +177,28 @@ function toggleInputs() {
 }
 
 function NotatieConverter(waarde, label, unit) {
+    let prefix = "";
+    let scaledValue = waarde;
+
     if (waarde >= 1) {
-        return `${label} = ${waarde.toFixed(2)} ${unit}`;
+        scaledValue = waarde;
+        prefix = "";
     } else if (waarde >= 0.001) {
-        return `${label} = ${(waarde * 1000).toFixed(2)} m${unit}`;
+        scaledValue = waarde * 1_000;
+        prefix = "m";
     } else if (waarde >= 0.000001) {
-        return `${label} = ${(waarde * 1_000_000).toFixed(2)} µ${unit}`;
+        scaledValue = waarde * 1_000_000;
+        prefix = "µ";
     } else if (waarde >= 0.000000001) {
-        return `${label} = ${(waarde * 1_000_000_000).toFixed(2)} n${unit}`;
+        scaledValue = waarde * 1_000_000_000;
+        prefix = "n";
     } else {
         return `${label} = ${waarde.toExponential(2)} ${unit}`;
     }
+
+    return `${label} = ${scaledValue.toFixed(2)} ${prefix}${unit}`;
 }
+
 
 function berekenMassa() {
     const rho_n = parseFloat(document.getElementById("gas").value);
